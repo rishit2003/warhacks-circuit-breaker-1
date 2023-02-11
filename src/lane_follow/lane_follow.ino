@@ -3,23 +3,20 @@
 
 void setup() {
   Serial.begin(9600);
-  Serial.println('hello');
+  
 }
 
 Serial.println("leftWhite " << leftWhite << ", rightWhite " << rightWhite);
 
 void loop() {
-  int leftSensorValue = analogRead(leftSensorPin);
-  int rightSensorValue = analogRead(rightSensorPin);
+  bool leftWhite = digital_check_left();
+  bool rightWhite = digital_check_right();
 
-  if (leftSensorValue > rightSensorValue) {
-    // The vehicle is too far to the right, steer left
-    turn_left();
-  } else if (rightSensorValue > leftSensorValue) {
-    // The vehicle is too far to the left, steer right
-    turn_right();
-  } else {
-    // The vehicle is centered, move forward
+  if(leftWhite && rightWhite) {
     go_straight();
   }
+  else if(leftWhite == false && rightWhite == true) {
+    
+  }
+
 }

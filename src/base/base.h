@@ -51,7 +51,9 @@ void turn_left(){
   digitalWrite(R2, LOW);
       #endif
 }
-
+void go_back(){
+  
+}
     void stop(){
   #ifdef ARDUINO
   digitalWrite(L1, LOW);
