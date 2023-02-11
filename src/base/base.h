@@ -6,10 +6,16 @@
   #ifdef ARDUINO
 
 
-  const int leftSensorPin = A0;
-  const int rightSensorPin = A1;
-  const int motorPin1 = 2;
-  const int motorPin2 = 3;
+  const int analogLeftSensorPin = A0;
+  const int analogRightSensorPin = A1;
+  const int digitalLeftSensorPin = 12;
+  const int digitalRightSensorPin = 13;
+
+  const int motorLeftPinA = 2;
+  const int motorLeftPinB = 4;
+  const int motorRightPinA = 7;
+  const int motorRightPinB = 8;
+
   // white surfaces will reflect IR 
   // so if the IR sensor detects some IR 
   // above the treshold, the surface is white
@@ -56,7 +62,7 @@
     bool digital_check_left(){
   #ifdef ARDUINO
 
-      int x = digitalRead(leftSensorPin);
+      int x = digitalRead(digitalLeftSensorPin);
       return x == HIGH;
       #endif
 }
@@ -65,7 +71,7 @@
     bool digital_check_right(){
   #ifdef ARDUINO
 
-      int x = digitalRead(rightSensorPin);
+      int x = digitalRead(digitalRightSensorPin);
       return x == HIGH;
       #endif
 }
