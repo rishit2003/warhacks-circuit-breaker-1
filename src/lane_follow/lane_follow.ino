@@ -6,6 +6,8 @@ void setup() {
   
 }
 
+Serial.println("leftWhite " << leftWhite << ", rightWhite " << rightWhite);
+
 void loop() {
   bool leftWhite = digital_check_left();
   bool rightWhite = digital_check_right();

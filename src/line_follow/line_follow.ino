@@ -11,6 +11,8 @@ void loop() {
   bool leftWhite = digital_check_left();
   bool rightWhite = digital_check_right();
 
+  Serial.println("leftWhite " << leftWhite << ", rightWhite " << rightWhite); 
+
   if (leftWhite && rightWhite) {
     go_straight();
   } else if (leftWhite) {

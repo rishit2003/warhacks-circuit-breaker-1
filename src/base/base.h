@@ -11,10 +11,11 @@
   const int digitalLeftSensorPin = 12;
   const int digitalRightSensorPin = 13;
 
-  const int motorLeftPinA = 2;
-  const int motorLeftPinB = 4;
-  const int motorRightPinA = 7;
-  const int motorRightPinB = 8;
+  // left motor has two pins, same for right
+  const int L1 = 2;
+  const int L2 = 4;
+  const int R1 = 8;
+  const int R2 = 7;
 
   // white surfaces will reflect IR 
   // so if the IR sensor detects some IR 
@@ -22,12 +23,12 @@
   const int sensorThreshold = 500;
 
 
-    void turn_left(){
+void turn_left(){
   #ifdef ARDUINO
-
-        // turn left
-        digitalWrite(motorPin1, LOW);
-        digitalWrite(motorPin2, HIGH);
+  digitalWrite(L1, LOW);
+  digitalWrite(L2, HIGH);
+  digitalWrite(R1, HIGH);
+  digitalWrite(R2, LOW);
       #endif
 }
 
@@ -35,17 +36,19 @@
   #ifdef ARDUINO
 
         // turn right
-        digitalWrite(motorPin1, HIGH);
-        digitalWrite(motorPin2, LOW);
+  digitalWrite(L1, HIGH);
+  digitalWrite(L2, LOW);
+  digitalWrite(R1, LOW);
+  digitalWrite(R2, HIGH);
       #endif
 }
 
     void go_straight(){
   #ifdef ARDUINO
-
-        // go straight
-        digitalWrite(motorPin1, HIGH);
-        digitalWrite(motorPin2, HIGH);
+  digitalWrite(L1, HIGH);
+  digitalWrite(L2, LOW);
+  digitalWrite(R1, HIGH);
+  digitalWrite(R2, LOW);
       #endif
 }
 void go_back(){
@@ -53,12 +56,19 @@ void go_back(){
 }
     void stop(){
   #ifdef ARDUINO
-
-            // stop
-        digitalWrite(motorPin1, LOW);
-        digitalWrite(motorPin2, LOW);
+  digitalWrite(L1, LOW);
+  digitalWrite(L2, LOW);
+  digitalWrite(R1, LOW);
+  digitalWrite(R2, LOW);
       #endif
 }
+
+  void go_back(){
+    digitalWrite(L1, LOW);
+  digitalWrite(L2, HIGH);
+  digitalWrite(R1, LOW);
+  digitalWrite(R2, HIGH);
+  }
 
     // returns true if left sensor detects something above value
     bool digital_check_left(){
