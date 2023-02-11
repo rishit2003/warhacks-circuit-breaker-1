@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/notAdmin/Dev/hackathons/warhacks 2023/warhacks-circuit-breaker",
+      "program": "/Users/notAdmin/Dev/hackathons/warhacks 2023/warhacks-circuit-breaker/build/Debug/outDebug"
+    }
+  ]
+}
