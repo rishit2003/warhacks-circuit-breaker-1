@@ -3,12 +3,18 @@
 
 void setup() {
   Serial.begin(9600);
-  Serial.println('hello');
+  
 }
 
 void loop() {
-  int leftSensorValue = digitalRead(leftSensorPin);
-  int rightSensorValue = digitalRead(rightSensorPin);
+  bool leftWhite = digital_check_left();
+  bool rightWhite = digital_check_right();
 
-  
+  if(leftWhite && rightWhite) {
+    go_straight();
+  }
+  else if(leftWhite == false && rightWhite == true) {
+    
+  }
+
 }
