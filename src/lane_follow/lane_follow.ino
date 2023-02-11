@@ -6,6 +6,8 @@ void setup() {
   Serial.println('hello');
 }
 
+Serial.println("leftWhite " << leftWhite << ", rightWhite " << rightWhite);
+
 void loop() {
   int leftSensorValue = analogRead(leftSensorPin);
   int rightSensorValue = analogRead(rightSensorPin);
