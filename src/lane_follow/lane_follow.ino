@@ -1,13 +1,4 @@
-# include "/Users/rishitmittal/Downloads/Concordia University/Warhacks/warhacks-circuit-breaker/src/base/base.h"
 
-// For IR sensor
-int irDigital1 = 12;
-int irDigital2 = 13;
-
-int motorleftpinA = 2;
-int motorleftpinB = 4;
-int motorrightpinA = 7;
-int motorrightpinB = 8;
 
 
 void setup() {
@@ -30,25 +21,7 @@ void loop() {
   int IR1 = findIntensity(irDigital1);
   int IR2 = findIntensity(irDigital2);
 
-  if(IR1 == 1 && IR2 == 1) {
-    forward(motorleftpinA, motorleftpinB, motorrightpinA, motorrightpinB);
-  }
-  else if(IR1 == 0 && IR2 == 1) {
-    turn_right(motorleftpinA, motorleftpinB, motorrightpinA, motorrightpinB);
-  }
-  else if(IR1 == 1 && IR2 == 0) {
-    turn_left(motorleftpinA, motorleftpinB, motorrightpinA, motorrightpinB);
-  }
-  else stop(motorleftpinA, motorleftpinB, motorrightpinA, motorrightpinB);
-}
 
-void forward(int L1, int L2, int R1, int R2) {
-  digitalWrite(L1, HIGH);
-  digitalWrite(L2, LOW);
-  digitalWrite(R1, LOW);
-  digitalWrite(R2, HIGH);
-  
-}
 
 void backward(int L1, int L2, int R1, int R2) {
   digitalWrite(L1, LOW);
