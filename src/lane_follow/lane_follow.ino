@@ -1,3 +1,4 @@
+// # include "/Users/rishitmittal/Downloads/Concordia University/Warhacks/warhacks-circuit-breaker/src/base/base.h"
 # include "/Users/notAdmin/Dev/hackathons/warhacks 2023/warhacks-circuit-breaker/src/base/base.h"
 
 
@@ -6,17 +7,21 @@ void setup() {
   
 }
 
-Serial.println("leftWhite " << leftWhite << ", rightWhite " << rightWhite);
-
 void loop() {
   bool leftWhite = digital_check_left();
   bool rightWhite = digital_check_right();
 
-  if(leftWhite && rightWhite) {
-    go_straight();
-  }
-  else if(leftWhite == false && rightWhite == true) {
+  Serial.print("hello");
+
+  go_straight();
+
+  // Serial.println("leftWhite " << leftWhite << ", rightWhite " << rightWhite);
+
+  // if(leftWhite && rightWhite) {
+  //   go_straight();
+  // }
+  // else if(leftWhite == false && rightWhite == true) {
     
-  }
+  // }
 
 }
