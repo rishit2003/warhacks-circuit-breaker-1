@@ -7,17 +7,8 @@ void setup() {
 }
 
 void loop() {
-  int leftSensorValue = analogRead(leftSensorPin);
-  int rightSensorValue = analogRead(rightSensorPin);
+  int leftSensorValue = digitalRead(leftSensorPin);
+  int rightSensorValue = digitalRead(rightSensorPin);
 
-  if (leftSensorValue > rightSensorValue) {
-    // The vehicle is too far to the right, steer left
-    turn_left();
-  } else if (rightSensorValue > leftSensorValue) {
-    // The vehicle is too far to the left, steer right
-    turn_right();
-  } else {
-    // The vehicle is centered, move forward
-    go_straight();
-  }
+  
 }
